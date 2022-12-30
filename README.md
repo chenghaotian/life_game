@@ -1,17 +1,17 @@
 # 生命游戏 (life_game)
 
-##介绍
+## 介绍
 康威生命游戏(Game of Life)，剑桥大学约翰·何顿·康威设计的计算机程序。
 我用python编写了复刻版本
 
-##作者
+## 作者
 成昊天
 
-##联系方式
+## 联系方式
 - Email: dboycht@qq.com
 - [Github](https://github.com/chenghaotian): @chenghaotian
 
-##更新日志
+## 更新日志
 ### v1.0
 #### 更新日期
 _Dec.30/2022_
