@@ -63,33 +63,33 @@ class Chunk(object):
             sigma += self.get_item(item_get[0], item_get[1])
         return sigma
 
-    def set_item(self, x_set: int, y_set: int, state: bool):
+    def set_item_org(self, x_set: int, y_set: int):
         """
         设置值
         :param x_set: x
         :param y_set: y
-        :param state: 状态
         :return:啥也没有
         """
-        fg = []
-        for a in range(0, self.y):
-            row = []
-            if a == y_set:
-                for q in range(0, self.x):
-                    if q == x_set:
-                        row.append(1)
+        new_chunk = []
+        for row_n in range(0, len(self.chunk)):
+            row = self.chunk[row_n]
+            new_row = []
+            for q_n in range(0, len(row)):
+                q = row[q_n]
+                if q == 1:
+                    new_row.append(1)
+                else:
+                    if (row_n == y_set) and (q_n == x_set):
+                        new_row.append(1)
                     else:
-                        row.append(0)
-
-            else:
-                for q in range(0, self.x):
-                    if self.chunk[a][q] == 0:
-                        row.append(0)
-                    else:
-                        row.append(1)
-
-            fg.append(row)
-        self.chunk_update(fg)
+                        new_row.append(0)
+            new_chunk.append(new_row)
+        self.chunk = new_chunk
 
     def chunk_update(self, new: list):
         self.chunk = new
+
+
+if __name__ == '__main__':
+    c = Chunk(5, 5)
+    print(c.get_chunk())
