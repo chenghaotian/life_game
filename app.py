@@ -20,13 +20,13 @@ def change_chunk(cl: list, Ch: chunk.Chunk):
             if y_runner_get[x_runner] == 1:
                 if Ch.get_per_sum(x_runner, y_runner) <= 2:
                     new_chunk_row.append(0)
-                elif Ch.get_per_sum(x_runner, y_runner) == 3:
+                elif 3 <= Ch.get_per_sum(x_runner, y_runner) <= 4:
                     new_chunk_row.append(1)
-                elif Ch.get_per_sum(x_runner, y_runner) >= 4:
+                elif Ch.get_per_sum(x_runner, y_runner) >= 5:
                     new_chunk_row.append(0)
             else:
                 # 此之谓死
-                if Ch.get_per_sum(x_runner, y_runner) >= 3:
+                if Ch.get_per_sum(x_runner, y_runner) == 3:
                     new_chunk_row.append(1)
                 else:
                     new_chunk_row.append(0)
